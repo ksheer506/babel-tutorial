@@ -9,4 +9,7 @@ export default defineConfig({
       plugins: [resolve(import.meta.dirname, 'src/@babel/tutorial.js')],
     },
   })],
+  resolve: {
+    alias: [{find: "@", replacement: resolve(import.meta.dirname, "src")}],
+  },
 })
