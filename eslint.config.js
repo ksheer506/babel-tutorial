@@ -9,7 +9,7 @@ export default tseslint.config(
   { ignores: ["dist"] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
+    files: ["**/*.{js,ts,tsx}"],
     languageOptions: {
       parser: tseslint.parser,
       ecmaVersion: 2020,
@@ -24,7 +24,7 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
-        { allowConstantExport: true },
+        { allowConstantExport: true }
       ],
       "@typescript-eslint/no-unused-vars": "warn",
       "array-callback-return": "error",
@@ -33,6 +33,7 @@ export default tseslint.config(
       "func-call-spacing": ["error", "never"],
       "@stylistic/block-spacing": "error",
       "@stylistic/semi": ["error", "never"],
+      "@stylistic/object-curly-spacing": ["error", "always"],
       "@stylistic/comma-dangle": [
         "error",
         {
@@ -40,8 +41,11 @@ export default tseslint.config(
           objects: "always-multiline",
           imports: "never",
           exports: "never",
-        },
+          functions: "never",
+        }
       ],
+      "@stylistic/indent": ["error", 2],
+      "@stylistic/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
     },
   }
 )
