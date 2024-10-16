@@ -5,6 +5,8 @@ import "@/App.css"
 
 function App() {
   const [count, setCount] = useState(0)
+  const num = 5
+  const added = num * num 
 
   return (
     <>
@@ -26,7 +28,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        {added}
       </p>
     </>
   )
